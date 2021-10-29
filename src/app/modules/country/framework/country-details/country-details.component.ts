@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {CountryModel} from "../models/country.model";
+import {CountryModel} from "../../domain/models/country.model";
 import {Location} from '@angular/common';
 
 @Component({

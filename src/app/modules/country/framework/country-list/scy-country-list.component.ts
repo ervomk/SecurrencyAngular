@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {RequestsService} from "../services/requests.service";
-import {CountryStoreService} from "../services/country-store.service";
-import {UtilitiesService} from "../services/utilities.service";
+import {RequestsService} from "../../domain/services/requests.service";
+import {CountryStoreService} from "../../domain/services/country-store.service";
+import {UtilitiesService} from "../../domain/services/utilities.service";
 
 @Component({
   selector: 'scy-country-list',
@@ -18,8 +18,13 @@ export class ScyCountryListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Makes init call too get all countries.
-    this.request.getAllCountries();
+    // This is how we handle edge case where user can write something with no results,
+    // in the meantime click on the detailed view, and when
+    // go back we won't reload data since the search query is remembered.
+    if (!this.countryMiniStore.$countriesShowNoResults.getValue()) {
+      // Makes init call too get all countries.
+      this.request.getAllCountries();
+    }
   }
 
   /**

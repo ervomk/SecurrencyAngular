@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {CountryModel} from "../models/country.model";
-import {environment} from "../../environments/environment";
+import {environment} from "../../../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,9 @@ export class CountryStoreService {
   $countries: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   $countriesPaginationCurrentPage: BehaviorSubject<number> = new BehaviorSubject<number>(environment.DEFAULT_INITIAL_PAGINATION_PAGE);
   $countriesResultsToShow: BehaviorSubject<number> = new BehaviorSubject<number>(environment.DEFAULT_PAGINATION_RESULTS_TO_SHOW);
+  $countriesShowNoResults: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   $countrySearchQuery: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  $dataLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor() {
   }
@@ -49,5 +51,22 @@ export class CountryStoreService {
    */
   updateCountrySearchQuery(value: string): void {
     this.$countrySearchQuery.next(value);
+  }
+
+  /**
+   * Sets value to loading observable.
+   * @param value
+   */
+  setLoading(value: boolean): void {
+    this.$dataLoading.next(value);
+  }
+
+  /**
+   * Sets value to error no results observable.
+   * @param value
+   */
+  updateCountriesShowNoResults(value: boolean): void {
+    this.updateDataCountries(null);
+    this.$countriesShowNoResults.next(value);
   }
 }

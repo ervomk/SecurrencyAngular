@@ -6,7 +6,7 @@
         <select name="numberResults" id="numberResults" (change)="outputPaginationMaxResultsToShow(numberResults.value)"
                 #numberResults>
           <option *ngFor="let option of paginationPossibleResults"
-                  [attr.selected]="option === environment.DEFAULT_PAGINATION_RESULTS_TO_SHOW ? true : null"
+                  [attr.selected]="option === maximumPerPage ? true : null"
                   [value]="option">{{option}}</option>
         </select>
       </div>

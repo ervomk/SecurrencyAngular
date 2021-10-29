@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CountryModel} from "../models/country.model";
+import {CountryModel} from "../../domain/models/country.model";
 
 @Component({
   selector: 'scy-single-country',

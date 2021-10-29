@@ -1,8 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import {PaginationService} from "../../services/pagination.service";
-import {PaginationModel} from "../../models/pagination.model";
-import {PaginationPossibleResults} from "../../mocks/pagination-possible-results.mock";
-import {environment} from "../../../environments/environment";
+import {PaginationService} from "../../modules/country/domain/services/pagination.service";
+import {PaginationModel} from "../../modules/country/domain/models/pagination.model";
+import {PaginationPossibleResults} from "../../modules/country/domain/mocks/pagination-possible-results.mock";
 
 @Component({
   selector: 'scy-pagination',
@@ -21,7 +20,6 @@ export class PaginationComponent implements OnInit, OnChanges {
   maximumNumberOfPages!: number;
   maximumNumberOfPagesAsArray!: PaginationModel[];
   paginationPossibleResults: number[] = PaginationPossibleResults;
-  environment = environment;
 
   constructor(
     private paginationService: PaginationService

@@ -83,6 +83,7 @@ strong {
 }
 
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-inner-spin-button,
+select {
   appearance: none;
 }

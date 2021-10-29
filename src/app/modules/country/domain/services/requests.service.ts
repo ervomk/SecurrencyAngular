@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CountryStoreService} from "./country-store.service";
 import {CountryModel} from "../models/country.model";
-import {environment} from "../../environments/environment";
+import {environment} from "../../../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -36,12 +36,15 @@ export class RequestsService {
    * @param callback
    */
   searchCountries(query: string, callback?: Function): void {
+    this.countryMiniStore.updateCountriesShowNoResults(false);
+
     if (query) {
       (this.httpClient.get(`${environment.API.COUNTRIES_SEARCH}${query}`) as Observable<CountryModel[]>).toPromise().then((result: CountryModel[]) => {
         this.countryMiniStore.updateDataCountries(result);
         return callback;
       }, (error: any) => {
         // Handle error here...
+        this.countryMiniStore.updateCountriesShowNoResults(true);
       })
     } else {
       // We reset the store and then execute the request to fetch all countries again.

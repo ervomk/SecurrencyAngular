@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup} from "@angular/forms";
 import {debounceTime} from "rxjs/operators";
-import {InputTypeEnum} from "../enums/input-type.enum";
-import {RequestsService} from "../services/requests.service";
-import {CountryStoreService} from "../services/country-store.service";
+import {InputTypeEnum} from "../../domain/enums/input-type.enum";
+import {RequestsService} from "../../domain/services/requests.service";
+import {CountryStoreService} from "../../domain/services/country-store.service";
 
 @Component({
   selector: 'scy-country-search',

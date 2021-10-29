@@ -2,11 +2,16 @@
   <div class="scy-country-list__search">
     <scy-country-search></scy-country-search>
   </div>
+  <ng-container *ngIf="countryMiniStore.$countriesShowNoResults.getValue()">
+    <div class="container container--padding-top-bottom">
+      <p>No Results. Please try with different query.</p>
+    </div>
+  </ng-container>
   <ng-container *ngIf="(countryMiniStore.$countries | async) as countries">
     <div class="container container--padding-top-bottom">
       <div class="scy-country-list__results">
         <div class="scy-country-list__results__single"
-             [routerLink]="['/country-details']"
+             [routerLink]="['country-details']"
              [state]="country"
              *ngFor="let country of countries
        | pagination:
@@ -28,4 +33,4 @@
     </div>
   </ng-container>
 </div>
-<scy-loader></scy-loader>
+<scy-loader *ngIf="countryMiniStore.$dataLoading.getValue()"></scy-loader>
