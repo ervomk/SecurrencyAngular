@@ -1,14 +1,14 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import {PaginationService} from "../../modules/country/domain/services/pagination.service";
-import {PaginationModel} from "../../modules/country/domain/models/pagination.model";
-import {PaginationPossibleResults} from "../../modules/country/domain/mocks/pagination-possible-results.mock";
+import {PaginationService} from "../../../modules/country/domain/services/pagination.service";
+import {PaginationModel} from "../../../modules/country/domain/models/pagination.model";
+import {PaginationPossibleResults} from "../../../modules/country/domain/mocks/pagination-possible-results.mock";
 
 @Component({
   selector: 'scy-pagination',
-  templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss']
+  templateUrl: './svc-pagination.component.html',
+  styleUrls: ['./svc-pagination.component.scss']
 })
-export class PaginationComponent implements OnInit, OnChanges {
+export class SvcPaginationComponent implements OnInit, OnChanges {
 
   @Input() dataLength!: number;
   @Input() maximumPerPage!: number;

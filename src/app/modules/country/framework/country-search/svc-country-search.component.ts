@@ -7,10 +7,10 @@ import {CountryStoreService} from "../../domain/services/country-store.service";
 
 @Component({
   selector: 'scy-country-search',
-  templateUrl: './country-search.component.html',
-  styleUrls: ['./country-search.component.scss']
+  templateUrl: './svc-country-search.component.html',
+  styleUrls: ['./svc-country-search.component.scss']
 })
-export class CountrySearchComponent implements OnInit {
+export class SvcCountrySearchComponent implements OnInit {
 
   searchFormGroup = new FormGroup({
     query: new FormControl(this.countryStoreService.$countrySearchQuery.getValue())

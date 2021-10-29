@@ -1,13 +1,13 @@
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
 import {ScyCountryListComponent} from "./framework/country-list/scy-country-list.component";
-import {CountryDetailsComponent} from "./framework/country-details/country-details.component";
-import {CountryMainViewComponent} from "./framework/country-main-view/country-main-view.component";
+import {SvcCountryDetailsComponent} from "./framework/country-details/svc-country-details.component";
+import {SvcCountryMainViewComponent} from "./framework/country-main-view/svc-country-main-view.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: CountryMainViewComponent,
+    component: SvcCountryMainViewComponent,
     children: [
       {
         path: '',
@@ -15,7 +15,7 @@ const routes: Routes = [
       },
       {
         path: 'country-details',
-        component: CountryDetailsComponent
+        component: SvcCountryDetailsComponent
       }
     ]
   },

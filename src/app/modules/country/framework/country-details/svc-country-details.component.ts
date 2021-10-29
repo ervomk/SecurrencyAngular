@@ -5,10 +5,10 @@ import {Location} from '@angular/common';
 
 @Component({
   selector: 'scy-country-details',
-  templateUrl: './country-details.component.html',
-  styleUrls: ['./country-details.component.scss']
+  templateUrl: './svc-country-details.component.html',
+  styleUrls: ['./svc-country-details.component.scss']
 })
-export class CountryDetailsComponent implements OnInit {
+export class SvcCountryDetailsComponent implements OnInit {
 
   countryData!: CountryModel;
 

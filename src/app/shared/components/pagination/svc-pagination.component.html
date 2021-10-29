@@ -3,7 +3,9 @@
     <div class="scy-pagination__items">
       <div class="scy-pagination__items__result-count">
         <p class="scy-pagination__items__result-count__label">Numbers of results:</p>
-        <select name="numberResults" id="numberResults" (change)="outputPaginationMaxResultsToShow(numberResults.value)"
+        <select
+          class="scy-pagination__items__result-count__select"
+          name="numberResults" id="numberResults" (change)="outputPaginationMaxResultsToShow(numberResults.value)"
                 #numberResults>
           <option *ngFor="let option of paginationPossibleResults"
                   [attr.selected]="option === maximumPerPage ? true : null"

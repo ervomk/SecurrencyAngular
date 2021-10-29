@@ -2,11 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'scy-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  templateUrl: './svc-button.component.html',
+  styleUrls: ['./svc-button.component.scss']
 })
-export class ButtonComponent implements OnInit {
-
+export class SvcButtonComponent implements OnInit {
+  
   @Input() text!: string;
 
   constructor() { }

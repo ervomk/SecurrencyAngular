@@ -1,14 +1,14 @@
-<div class="scy-country-list">
+<div class="scy-country-list helper-top-bottom-padding">
   <div class="scy-country-list__search">
     <scy-country-search></scy-country-search>
   </div>
   <ng-container *ngIf="countryMiniStore.$countriesShowNoResults.getValue()">
-    <div class="container container--padding-top-bottom">
+    <div class="container">
       <p>No Results. Please try with different query.</p>
     </div>
   </ng-container>
   <ng-container *ngIf="(countryMiniStore.$countries | async) as countries">
-    <div class="container container--padding-top-bottom">
+    <div class="container">
       <div class="scy-country-list__results">
         <div class="scy-country-list__results__single"
              [routerLink]="['country-details']"

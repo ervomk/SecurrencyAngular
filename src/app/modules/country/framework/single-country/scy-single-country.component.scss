@@ -1,25 +1,34 @@
+:host {
+  display: block;
+}
+
 .scy-single-country {
-  background: var(--color-white);
   cursor: pointer;
   position: relative;
+  perspective: 1000px;
 
-  &:hover {
-    &:after {
-      opacity: 1;
+  & .js-scy-box-parallax {
+    background: var(--color-white);
+    transition: all 0.2s;
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
     }
-  }
 
-  &:after {
-    content: "";
-    box-shadow: 0 0 20px var(--primary-box-shadow);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    opacity: 0.5;
-    transition: all 0.3s;
+    &:after {
+      content: "";
+      box-shadow: 0 0 20px var(--primary-box-shadow);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      opacity: 0.5;
+      transition: all 0.3s;
+    }
   }
 
   &__image-container {

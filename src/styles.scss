@@ -12,11 +12,11 @@ body {
   max-width: var(--container-max-width);
   margin: auto;
   padding: 0 10px;
+}
 
-  &--padding-top-bottom{
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
+.helper-top-bottom-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 body, input {

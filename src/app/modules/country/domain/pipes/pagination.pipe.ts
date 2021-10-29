@@ -3,7 +3,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 @Pipe({
   name: 'pagination'
 })
-export class PaginationPipe implements PipeTransform {
+export class SvcPaginationPipe implements PipeTransform {
   transform(value: any[], page: number, resultsToShow: number): any {
     if (value) {
       // Slices array from to end position to show different results.
