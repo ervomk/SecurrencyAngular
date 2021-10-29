@@ -1,0 +1,31 @@
+<div class="scy-country-list">
+  <div class="scy-country-list__search">
+    <scy-country-search></scy-country-search>
+  </div>
+  <ng-container *ngIf="(countryMiniStore.$countries | async) as countries">
+    <div class="container container--padding-top-bottom">
+      <div class="scy-country-list__results">
+        <div class="scy-country-list__results__single"
+             [routerLink]="['/country-details']"
+             [state]="country"
+             *ngFor="let country of countries
+       | pagination:
+       countryMiniStore.$countriesPaginationCurrentPage.getValue()
+       :
+       countryMiniStore.$countriesResultsToShow.getValue()">
+          <scy-single-country [country]="country"></scy-single-country>
+        </div>
+      </div>
+    </div>
+    <div class="scy-country-list__pagination">
+      <scy-pagination
+        (outputMaxResultsToShow)="handleOutputActiveMaxResults($event)"
+        (outputActivatedPage)="handleOutputActivatedPage($event)"
+        [dataLength]="countries.length"
+        [maximumPerPage]="countryMiniStore.$countriesResultsToShow.getValue()"
+        [activePage]="countryMiniStore.$countriesPaginationCurrentPage.getValue()"
+      ></scy-pagination>
+    </div>
+  </ng-container>
+</div>
+<scy-loader></scy-loader>

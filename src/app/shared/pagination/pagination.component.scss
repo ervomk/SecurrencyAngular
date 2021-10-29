@@ -1,0 +1,59 @@
+@import "src/scss/mixins";
+
+.scy-pagination {
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 10;
+  box-shadow: 0 0 20px var(--primary-box-shadow);
+
+  @include media-query-mobile {
+    position: static;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    &__result-count {
+      border-right: 1px solid var(--primary-color);
+      padding-right: 10px;
+
+      &__label {
+        font-size: 13px;
+        line-height: 18px;
+        margin: 0 0 5px 0;
+      }
+    }
+
+    &__single {
+      background: white;
+      text-align: center;
+      font-weight: 300;
+      padding: 15px;
+      transition: all 0.3s;
+      background: var(--primary-color);
+      cursor: pointer;
+
+      &:hover {
+        background: var(--primary-color-darker);
+      }
+
+      &--active {
+        background: var(--secondary-color);
+        font-weight: 700;
+        color: var(--color-white);
+
+        &:hover {
+          background: var(--secondary-color);
+        }
+      }
+    }
+  }
+}

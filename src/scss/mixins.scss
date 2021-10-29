@@ -1,0 +1,14 @@
+$maxWidthTablet: 1024px;
+$maxWidthMobile: 600px;
+
+@mixin media-query-tablet {
+  @media only screen and (max-width: $maxWidthTablet) {
+    @content;
+  }
+}
+
+@mixin media-query-mobile {
+  @media only screen and (max-width: $maxWidthMobile) {
+    @content;
+  }
+}

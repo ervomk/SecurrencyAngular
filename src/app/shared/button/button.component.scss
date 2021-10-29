@@ -1,0 +1,12 @@
+.scy-button {
+  background: var(--secondary-color);
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+
+  &:hover {
+    background: var(--secondary-color-hover);
+  }
+}

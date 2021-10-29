@@ -1,0 +1,20 @@
+.scy-input {
+  &__label {
+    color: var(--color-black);
+    display: block;
+    font-size: var(--input-font-size);
+    line-height: calc(var(--input-font-size) + 5px);
+    font-weight: 300;
+    margin: 0 0 5px 0;
+  }
+
+  &__input {
+    padding: 20px 10px;
+    width: 100%;
+    border: 1px solid var(--primary-color);
+
+    &:focus{
+      border-color: var(--secondary-color);
+    }
+  }
+}

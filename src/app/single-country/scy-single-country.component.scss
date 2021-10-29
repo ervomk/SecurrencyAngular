@@ -1,0 +1,45 @@
+.scy-single-country {
+  background: var(--color-white);
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  &:after {
+    content: "";
+    box-shadow: 0 0 20px var(--primary-box-shadow);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.5;
+    transition: all 0.3s;
+  }
+
+  &__image-container {
+    border-bottom: 1px solid var(--primary-color);
+    text-align: center;
+    padding: 15px;
+
+    &__image {
+      max-width: 100px;
+    }
+  }
+
+  &__content {
+    padding: 15px;
+
+    & p {
+      font-size: 15px;
+      line-height: 23px;
+      margin-bottom: 5px;
+      font-weight: 300;
+    }
+  }
+}

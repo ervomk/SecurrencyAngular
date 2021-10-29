@@ -1,0 +1,26 @@
+<div class="scy-input">
+  <label class="scy-input__label" *ngIf="label" [attr.for]="id">{{label}}</label>
+
+  <ng-container *ngIf="type !== inputTypeEnum.TEXTAREA">
+    <input class="scy-input__input"
+           [disabled]="disabled"
+           [(ngModel)]="input"
+           [placeholder]="placeholder"
+           (ngModelChange)="onChange($event)"
+           (blur)="onTouch()"
+           [attr.type]="type"
+           [attr.name]="id"
+           [attr.id]="id"/>
+  </ng-container>
+
+  <ng-container *ngIf="type === inputTypeEnum.TEXTAREA">
+    <textarea class="scy-input__input"
+              [(ngModel)]="input"
+              [disabled]="disabled"
+              (ngModelChange)="onChange($event)"
+              (blur)="onTouch()"
+              [attr.type]="type"
+              [attr.name]="id"
+              [attr.id]="id"></textarea>
+  </ng-container>
+</div>

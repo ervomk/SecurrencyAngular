@@ -1,0 +1,12 @@
+<div class="scy-single-country">
+  <div class="scy-single-country__image-container">
+    <img class="scy-single-country__image-container__image"
+         [src]="country?.flags?.png"
+         alt="Country Flag">
+  </div>
+  <div class="scy-single-country__content">
+    <p><strong>Name:</strong> {{country.name?.official}}</p>
+    <p><strong>Region:</strong> {{country?.region}}</p>
+    <p><strong>Subregion:</strong> {{country?.subregion}}</p>
+  </div>
+</div>

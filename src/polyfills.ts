@@ -18,6 +18,10 @@
  * BROWSER POLYFILLS
  */
 
+// Mostly for Safari
+import * as smoothscroll from "smoothscroll-polyfill";
+smoothscroll.polyfill();
+
 /**
  * IE11 requires the following for NgClass support on SVG elements
  */

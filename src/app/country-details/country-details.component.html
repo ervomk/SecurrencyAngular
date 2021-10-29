@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="scy-country-details">
+    <scy-button (click)="handleGoBack()" [text]="'Go Back'"></scy-button>
+    <div class="scy-country-details__image-container">
+      <img
+        class="scy-country-details__image-container__image"
+        [src]="countryData?.flags?.png"
+        alt="">
+    </div>
+    <div class="scy-country-details__content">
+      <p class="scy-country-details__content__text"><strong>Name: </strong>{{countryData?.name?.official}}</p>
+      <p class="scy-country-details__content__text"><strong>Capital: </strong>{{countryData?.capital}}</p>
+      <p class="scy-country-details__content__text"><strong>Code3: </strong>{{countryData?.cca3}}</p>
+      <p class="scy-country-details__content__text"><strong>Region: </strong>{{countryData?.region}}</p>
+      <p class="scy-country-details__content__text"><strong>Subregion: </strong>{{countryData?.subregion}}</p>
+      <p class="scy-country-details__content__text"><strong>Language: </strong>{{countryData?.languages?.eng}}</p>
+      <p class="scy-country-details__content__text"><strong>Currencies: </strong>
+        <span *ngFor="let currency of returnCurrencies(countryData.currencies)">{{currency.name}}</span>
+      </p>
+    </div>
+  </div>
+</div>
