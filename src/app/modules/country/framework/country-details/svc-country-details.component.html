@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="scy-country-details">
+  <p *ngIf="!countryData">We can add guard here to prevent loading this view, just an idea. :D</p>
+  <div *ngIf="countryData" class="scy-country-details">
     <scy-button (click)="handleGoBack()" [text]="'Go Back'"></scy-button>
     <div class="scy-country-details__image-container">
       <img
