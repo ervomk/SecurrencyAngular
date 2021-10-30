@@ -1,0 +1,18 @@
+<div class="container helper-top-bottom-padding">
+  <div class="helper-margin-bottom-30">
+    <scy-button [text]="'Go Back To List'"
+    [routerLink]="['/countries']"
+    ></scy-button>
+  </div>
+  <div class="scy-favorites-view">
+    <p *ngIf="!countries || countries.length === 0">No Favorites for now.</p>
+    <div class="scy-favorites-view__results"
+         [routerLink]="['/countries/country-details']"
+         [state]="country"
+         *ngFor="let country of countries; trackBy: trackByMethod">
+      <scy-single-country
+        (emitFavoritesDeleteEvent)="handleEmitFavoritesDeleteEvent()"
+        [country]="country"></scy-single-country>
+    </div>
+  </div>
+</div>

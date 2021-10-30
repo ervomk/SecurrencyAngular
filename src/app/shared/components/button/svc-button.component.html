@@ -1,3 +1,5 @@
-<button class="scy-button">
+<button class="scy-button"
+        [class.scy-button--full-width]="setFullWidth"
+        [class.scy-button--delete-button]="isDeleteButton">
   {{text}}
 </button>

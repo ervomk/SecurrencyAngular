@@ -1,0 +1,15 @@
+@import "src/scss/mixins";
+
+.scy-favorites-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+
+  @include media-query-tablet() {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include media-query-mobile() {
+    grid-template-columns: 1fr 1fr;
+  }
+}

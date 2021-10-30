@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {CountryModel} from "../../domain/models/country.model";
 import {Location} from '@angular/common';
+import {UtilitiesService} from "../../../../shared/services/utilities.service";
 
 @Component({
   selector: 'scy-country-details',
@@ -13,7 +14,8 @@ export class SvcCountryDetailsComponent implements OnInit {
   countryData!: CountryModel;
 
   constructor(private router: Router,
-              private location: Location) {
+              private location: Location,
+              private utilitiyService: UtilitiesService) {
     // Gets data from route state.
     this.countryData = router.getCurrentNavigation()?.extras.state as CountryModel;
   }
@@ -23,12 +25,10 @@ export class SvcCountryDetailsComponent implements OnInit {
 
   /**
    * Returns array of currencies.
-   * @param currencies
+   * @param data
    */
-  returnCurrencies(currencies: any): any[] {
-    return Object.keys(currencies).map((result) => {
-      return currencies[result] as any;
-    })
+  returnObjectAsArray(data: any): any[] {
+    return this.utilitiyService.returnObjectAsArray(data);
   }
 
   /**

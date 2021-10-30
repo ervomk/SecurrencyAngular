@@ -18,26 +18,30 @@ import {SvcPaginationPipe} from "./domain/pipes/pagination.pipe";
 
 
 @NgModule({
-  declarations: [
-    SvcCountryDetailsComponent,
-    ScyCountryListComponent,
-    SvcCountrySearchComponent,
-    ScyErrorViewComponent,
+    declarations: [
+        SvcCountryDetailsComponent,
+        ScyCountryListComponent,
+        SvcCountrySearchComponent,
+        ScyErrorViewComponent,
+        ScySingleCountryComponent,
+        ScyInputComponent,
+        SvcPaginationPipe,
+        SvcPaginationComponent,
+        SvcLoaderComponent,
+        SvcButtonComponent,
+        SvcCountryMainViewComponent,
+        ScyBoxParallaxDirective
+    ],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        FormsModule,
+        RouterModule,
+        CountryRoutingModule,
+    ],
+  exports: [
     ScySingleCountryComponent,
-    ScyInputComponent,
-    SvcPaginationPipe,
-    SvcPaginationComponent,
-    SvcLoaderComponent,
-    SvcButtonComponent,
-    SvcCountryMainViewComponent,
-    ScyBoxParallaxDirective
-  ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    RouterModule,
-    CountryRoutingModule,
-  ],
+    SvcButtonComponent
+  ]
 })
 export class CountryModule { }

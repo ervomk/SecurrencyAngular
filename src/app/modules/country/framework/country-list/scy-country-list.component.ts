@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RequestsService} from "../../domain/services/requests.service";
 import {CountryStoreService} from "../../domain/services/country-store.service";
-import {UtilitiesService} from "../../domain/services/utilities.service";
+import {UtilitiesService} from "../../../../shared/services/utilities.service";
 
 @Component({
   selector: 'scy-country-list',

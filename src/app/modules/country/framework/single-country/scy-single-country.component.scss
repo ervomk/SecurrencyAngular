@@ -9,6 +9,7 @@
 
   & .js-scy-box-parallax {
     background: var(--color-white);
+    padding: 15px;
     transition: all 0.2s;
 
     &:hover {
@@ -34,7 +35,7 @@
   &__image-container {
     border-bottom: 1px solid var(--primary-color);
     text-align: center;
-    padding: 15px;
+    padding-bottom: 15px;
 
     &__image {
       max-width: 100px;
@@ -42,13 +43,16 @@
   }
 
   &__content {
-    padding: 15px;
-
     & p {
       font-size: 15px;
       line-height: 23px;
       margin-bottom: 5px;
       font-weight: 300;
     }
+  }
+
+  &__bottom-content{
+    padding: 15px 0 0 0;
+    border-top: 1px solid var(--primary-color);
   }
 }

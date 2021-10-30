@@ -2,11 +2,21 @@
   <div class="scy-country-list__search">
     <scy-country-search></scy-country-search>
   </div>
+
+  <div class="container">
+    <div class="helper-margin-bottom-30">
+      <scy-button [text]="'Go To Favorites'"
+                  [routerLink]="['/countries/favorites']"
+      ></scy-button>
+    </div>
+  </div>
+
   <ng-container *ngIf="countryMiniStore.$countriesShowNoResults.getValue()">
     <div class="container">
       <p>No Results. Please try with different query.</p>
     </div>
   </ng-container>
+
   <ng-container *ngIf="(countryMiniStore.$countries | async) as countries">
     <div class="container">
       <div class="scy-country-list__results">

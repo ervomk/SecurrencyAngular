@@ -10,5 +10,12 @@
       <p><strong>Region:</strong> {{country?.region}}</p>
       <p><strong>Subregion:</strong> {{country?.subregion}}</p>
     </div>
+    <div class="scy-single-country__bottom-content">
+      <scy-button
+        (click)="addToFavorites($event)"
+        [text]="isCountryFavorited ? 'Remove From Favorites' : 'Add To Favorites'"
+        [setFullWidth]="true"
+        [isDeleteButton]="isCountryFavorited"></scy-button>
+    </div>
   </div>
 </div>

@@ -20,4 +20,14 @@ export class UtilitiesService {
       behavior: "smooth"
     });
   }
+
+  /**
+   * Returns array of currencies.
+   * @param data
+   */
+  returnObjectAsArray(data: any): any[] {
+    return Object.keys(data).map((result) => {
+      return data[result] as any;
+    })
+  }
 }

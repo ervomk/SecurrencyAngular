@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {PaginationModel} from "../models/pagination.model";
+import {PaginationModel} from "../../modules/country/domain/models/pagination.model";
 
 @Injectable({
   providedIn: 'root'

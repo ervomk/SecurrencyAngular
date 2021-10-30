@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import {PaginationService} from "../../../modules/country/domain/services/pagination.service";
+import {PaginationService} from "../../services/pagination.service";
 import {PaginationModel} from "../../../modules/country/domain/models/pagination.model";
 import {PaginationPossibleResults} from "../../../modules/country/domain/mocks/pagination-possible-results.mock";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'scy-pagination',
@@ -43,7 +44,7 @@ export class SvcPaginationComponent implements OnInit, OnChanges {
    */
   calculatePaginationPages(): void {
     this.maximumNumberOfPages = this.paginationService.maximumNumberOfPages(this.dataLength, this.maximumPerPage);
-    this.maximumNumberOfPagesAsArray = this.paginationService.createPageArray(this.activePage, this.maximumPerPage, this.dataLength, 8);
+    this.maximumNumberOfPagesAsArray = this.paginationService.createPageArray(this.activePage, this.maximumPerPage, this.dataLength, environment.PAGINATION_PAGE_COUNT);
   }
 
   /**

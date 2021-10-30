@@ -9,4 +9,16 @@
   &:hover {
     background: var(--secondary-color-hover);
   }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--delete-button {
+    background: var(--color-red);
+
+    &:hover {
+      background: var(--color-red);
+    }
+  }
 }
