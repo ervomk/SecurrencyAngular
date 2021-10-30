@@ -17,4 +17,9 @@
   --primary-box-shadow: #00000040;
   --loader-size: 40px;
   --loader-border-size: 4px;
+
+  @include media-query-mobile{
+    --loader-size: 25px;
+    --loader-border-size: 3px;
+  }
 }

@@ -1,10 +1,6 @@
 @import "../../../../../scss/mixins";
 
 .scy-country-list {
-  &__search {
-    padding: 30px 0;
-  }
-
   &__results {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
