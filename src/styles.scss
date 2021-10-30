@@ -15,8 +15,13 @@ body {
 }
 
 .helper-top-bottom-padding {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @include media-query-mobile{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 }
 
 .helper-light-top-bottom-padding {
