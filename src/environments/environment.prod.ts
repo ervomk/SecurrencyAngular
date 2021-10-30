@@ -1,5 +1,7 @@
 export const environment = {
   production: true,
+  FAVORITES_LOCALSTORAGE_KEY: 'favorites-storage',
+  PAGINATION_PAGE_COUNT: 8,
   API: {
     COUNTRIES_ALL: 'https://restcountries.com/v3.1/all',
     COUNTRIES_SEARCH: 'https://restcountries.com/v3.1/name/'
