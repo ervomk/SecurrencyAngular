@@ -1,6 +1,6 @@
 import {Component, ElementRef, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
-import {InputTypeEnum} from "../../../modules/country/domain/enums/input-type.enum";
+import {InputTypeEnum} from "../../enums/input-type.enum";
 
 @Component({
   selector: 'scy-input',

@@ -15,10 +15,15 @@
       <p class="scy-country-details__content__text"><strong>Region: </strong>{{countryData?.region}}</p>
       <p class="scy-country-details__content__text"><strong>Subregion: </strong>{{countryData?.subregion}}</p>
       <p class="scy-country-details__content__text"><strong>Language: </strong>
-        <span *ngFor="let language of returnObjectAsArray(countryData.languages); let last = last;">{{language}}<span *ngIf="!last">, </span></span>
+        <span *ngFor="let language of returnObjectAsArray(countryData.languages); let last = last;">{{language}}<span
+          *ngIf="!last">, </span></span>
       </p>
       <p class="scy-country-details__content__text"><strong>Currencies: </strong>
         <span *ngFor="let currency of returnObjectAsArray(countryData.currencies)">{{currency.name}}</span>
+      </p>
+      <p class="scy-country-details__content__text"><strong>Phone Numbers: </strong>
+        {{countryData.idd.root}}
+        <span *ngFor="let suffix of countryData.idd.suffixes; let last = last;">{{suffix}} <span *ngIf="!last">,</span></span>
       </p>
     </div>
   </div>

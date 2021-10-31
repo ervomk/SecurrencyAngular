@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup} from "@angular/forms";
 import {debounceTime, takeUntil} from "rxjs/operators";
-import {InputTypeEnum} from "../../domain/enums/input-type.enum";
+import {InputTypeEnum} from "../../../../shared/enums/input-type.enum";
 import {RequestsService} from "../../domain/services/requests.service";
 import {CountryStoreService} from "../../domain/services/country-store.service";
 import {Subject} from "rxjs";
