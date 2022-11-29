@@ -9,9 +9,9 @@ import {UtilitiesService} from "../../../../shared/services/utilities.service";
   templateUrl: './svc-country-details.component.html',
   styleUrls: ['./svc-country-details.component.scss']
 })
-export class SvcCountryDetailsComponent implements OnInit {
+export class SvcCountryDetailsComponent {
 
-  countryData!: CountryModel;
+  public countryData!: CountryModel;
 
   constructor(private router: Router,
               private location: Location,
@@ -20,21 +20,18 @@ export class SvcCountryDetailsComponent implements OnInit {
     this.countryData = router.getCurrentNavigation()?.extras.state as CountryModel;
   }
 
-  ngOnInit(): void {
-  }
-
   /**
    * Returns array of currencies.
    * @param data
    */
-  returnObjectAsArray(data: any): any[] {
+  public returnObjectAsArray(data: any): any[] {
     return this.utilitiyService.returnObjectAsArray(data);
   }
 
   /**
    * Handles navigation back.
    */
-  handleGoBack(): void {
+  public handleGoBack(): void {
     this.location.back();
   }
 }

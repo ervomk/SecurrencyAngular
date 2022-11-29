@@ -13,18 +13,17 @@ import {Subject} from "rxjs";
 })
 export class SvcCountrySearchComponent implements OnInit, OnDestroy {
 
-  searchFormGroup = new FormGroup({
-    query: new FormControl(this.countryStoreService.$countrySearchQuery.getValue())
+  public searchFormGroup = new FormGroup({
+    query: new FormControl(this.countryStoreService.countrySearchQuery$.getValue())
   });
+  public readonly inputTypeEnum = InputTypeEnum;
 
-  inputTypeEnum = InputTypeEnum;
-
-  $destroy: Subject<boolean> = new Subject<boolean>();
+  private $destroy: Subject<boolean> = new Subject<boolean>();
 
   /**
    * Returns input abstract control for query.
    */
-  get queryInput(): AbstractControl | null {
+  public get queryInput(): AbstractControl | null {
     return this.searchFormGroup.get('query');
   }
 
@@ -34,7 +33,7 @@ export class SvcCountrySearchComponent implements OnInit, OnDestroy {
   ) {
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     // Listens on input change with short debounce/delay.
     this.queryInput?.valueChanges.pipe(takeUntil(this.$destroy), (debounceTime(1000))).subscribe((queryString: string) => {
       // Triggers the API call.
@@ -43,7 +42,7 @@ export class SvcCountrySearchComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy() {
     // Emits back to kill subscriptions.
     this.$destroy.next(true);
   }

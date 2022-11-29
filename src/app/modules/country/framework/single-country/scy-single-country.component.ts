@@ -9,25 +9,25 @@ import {CountryAddToStorageService} from "../../domain/services/country-add-to-s
 })
 export class ScySingleCountryComponent implements OnInit {
 
-  @Input() country!: CountryModel;
-  @Output() emitFavoritesDeleteEvent: EventEmitter<null> = new EventEmitter();
+  @Input() public country!: CountryModel;
+  @Output() public emitFavoritesDeleteEvent: EventEmitter<null> = new EventEmitter();
 
-  isCountryFavorited!: boolean;
+  public isCountryFavorited!: boolean;
 
   constructor(
     private singleCountryAddToStorage: CountryAddToStorageService
   ) {
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.checkIfCountryIsFavorited();
   }
 
-  checkIfCountryIsFavorited(): void {
+  public checkIfCountryIsFavorited(): void {
     this.isCountryFavorited = this.singleCountryAddToStorage.checkIfEntryIsFavorited(this.country.cca3);
   }
 
-  addToFavorites(event: any) {
+  public addToFavorites(event: Event): void {
     event.stopPropagation();
     if (!this.isCountryFavorited) {
       this.singleCountryAddToStorage.addToFavorites(this.country);

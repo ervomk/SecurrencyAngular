@@ -1,16 +1,21 @@
 :host {
   display: block;
+  height: 100%;
 }
 
 .scy-single-country {
   cursor: pointer;
   position: relative;
   perspective: 1000px;
+  height: inherit;
 
   & .js-scy-box-parallax {
+    height: inherit;
     background: var(--color-white);
     padding: 15px;
     transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
 
     &:hover {
       &:after {
@@ -51,7 +56,8 @@
     }
   }
 
-  &__bottom-content{
+  &__bottom-content {
+    margin-top: auto;
     padding: 15px 0 0 0;
     border-top: 1px solid var(--primary-color);
   }

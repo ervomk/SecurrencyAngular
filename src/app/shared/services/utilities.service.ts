@@ -14,7 +14,7 @@ export class UtilitiesService {
   /**
    * Scrolls to body top position.
    */
-  scrollBodyToTop(): void {
+  public scrollBodyToTop(): void {
     scroll({
       top: this.document.body.offsetTop,
       behavior: "smooth"
@@ -25,7 +25,7 @@ export class UtilitiesService {
    * Returns array of currencies.
    * @param data
    */
-  returnObjectAsArray(data: any): any[] {
+  public returnObjectAsArray(data: any): any[] {
     return Object.keys(data).map((result) => {
       return data[result] as any;
     })

@@ -16,35 +16,32 @@ import {InputTypeEnum} from "../../enums/input-type.enum";
 })
 export class ScyInputComponent implements ControlValueAccessor {
 
-  @Input() id: string | undefined;
-  @Input() type: string | undefined;
-  @Input() label: string | undefined;
-  @Input() placeholder: string | undefined;
+  @Input() public id: string | undefined;
+  @Input() public type: string | undefined;
+  @Input() public label: string | undefined;
+  @Input() public placeholder: string | undefined;
 
-  input?: string;
-  disabled!: boolean;
-  inputTypeEnum = InputTypeEnum;
-
-  constructor(private el: ElementRef) {
-  }
+  public input?: string;
+  public disabled!: boolean;
+  public inputTypeEnum = InputTypeEnum;
 
   /**
    * Invokes onChange as for Reactive Form.
    */
-  onChange: any = () => {
+  public onChange: any = () => {
   }
 
   /**
    * Invokes onTouch as for Reactive Form.
    */
-  onTouch: any = () => {
+  public onTouch: any = () => {
   }
 
   /**
    * Invokes on change event.
    * @param fn
    */
-  registerOnChange(fn: any): void {
+  public registerOnChange(fn: any): void {
     this.onChange = fn;
   }
 
@@ -52,7 +49,7 @@ export class ScyInputComponent implements ControlValueAccessor {
    * Invokes on touched event.
    * @param fn
    */
-  registerOnTouched(fn: any): void {
+  public registerOnTouched(fn: any): void {
     this.onTouch = fn;
   }
 
@@ -60,7 +57,7 @@ export class ScyInputComponent implements ControlValueAccessor {
    * Sets disabled state for the input.
    * @param disabled
    */
-  setDisabledState(disabled: boolean): void {
+  public setDisabledState(disabled: boolean): void {
     this.disabled = disabled;
   }
 
@@ -68,7 +65,7 @@ export class ScyInputComponent implements ControlValueAccessor {
    * Updates value for the input.
    * @param input
    */
-  writeValue(input: string) {
+  public writeValue(input: string) {
     this.input = input;
   }
 }

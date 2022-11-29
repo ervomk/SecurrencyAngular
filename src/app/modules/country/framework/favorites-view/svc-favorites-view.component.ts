@@ -10,7 +10,7 @@ import {UtilitiesService} from "../../../../shared/services/utilities.service";
 })
 export class SvcFavoritesViewComponent implements OnInit {
 
-  countries!: CountryModel[];
+  public countries!: CountryModel[];
 
   constructor(
     private countryAddToStorageService: CountryAddToStorageService,
@@ -18,7 +18,7 @@ export class SvcFavoritesViewComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.setCountriesFromStorage();
   }
 
@@ -26,15 +26,8 @@ export class SvcFavoritesViewComponent implements OnInit {
    * Listens for a change of the component
    * and updates entry list.
    */
-  handleEmitFavoritesDeleteEvent(): void {
+  public handleEmitFavoritesDeleteEvent(): void {
     this.setCountriesFromStorage();
-  }
-
-  /**
-   * Gets favorites from storage.
-   */
-  private setCountriesFromStorage(): void {
-    this.countries = this.countryAddToStorageService.returnLocalStorageData();
   }
 
   /**
@@ -42,7 +35,14 @@ export class SvcFavoritesViewComponent implements OnInit {
    * @param index
    * @param el
    */
-  trackByMethod(index: number, el: any): number {
-    return el.cca3;
+  public trackByMethod(index: number, el: any): number {
+    return el?.cca3;
+  }
+
+  /**
+   * Gets favorites from storage.
+   */
+  private setCountriesFromStorage(): void {
+    this.countries = this.countryAddToStorageService.returnLocalStorageData();
   }
 }

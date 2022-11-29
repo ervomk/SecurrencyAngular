@@ -14,14 +14,14 @@ export class PaginationService {
    * @param dataLength
    * @param maximumPerPage
    */
-  maximumNumberOfPages(dataLength: number, maximumPerPage: number): number {
+  public maximumNumberOfPages(dataLength: number, maximumPerPage: number): number {
     return Math.ceil(dataLength / maximumPerPage);
   }
 
   /**
    * Returns an array of Page objects to use in the pagination controls.
    */
-  createPageArray(currentPage: number, itemsPerPage: number, totalItems: number, paginationRange: number): PaginationModel[] {
+  public createPageArray(currentPage: number, itemsPerPage: number, totalItems: number, paginationRange: number): PaginationModel[] {
     // paginationRange could be a string if passed from attribute, so cast to number.
     paginationRange = +paginationRange;
     let pages: PaginationModel[] = [];

@@ -17,7 +17,7 @@ export class CountryAddToStorageService {
    * Adds country to favorites.
    * @param country
    */
-  addToFavorites(country: CountryModel): void {
+  public addToFavorites(country: CountryModel): void {
     let currentData: CountryModel[] = this.returnLocalStorageData();
 
     // Initially we may not have data, we make it ready for pushing data.
@@ -34,7 +34,7 @@ export class CountryAddToStorageService {
    * Removes data from storage via cc3 id.
    * @param countryCc3
    */
-  removeFromFavorites(countryCc3: string): void {
+  public removeFromFavorites(countryCc3: string): void {
     const currentData: CountryModel[] = this.returnLocalStorageData();
     currentData.splice(currentData.findIndex((item: CountryModel) => item.cca3 === countryCc3), 1);
     this.setDataToStorage(currentData);
@@ -44,7 +44,7 @@ export class CountryAddToStorageService {
    * Based on cc3 id, check whether the country is favorited.
    * @param countryCc3
    */
-  checkIfEntryIsFavorited(countryCc3: string): boolean {
+  public checkIfEntryIsFavorited(countryCc3: string): boolean {
     const currentData: CountryModel[] = this.returnLocalStorageData();
     if (currentData) {
       return currentData.findIndex((item: CountryModel) => item.cca3 === countryCc3) !== -1;
@@ -57,7 +57,7 @@ export class CountryAddToStorageService {
    * Returns data froom storage.
    * We can cache this get if we want (TODO) :D
    */
-  returnLocalStorageData(): CountryModel[] {
+  public returnLocalStorageData(): CountryModel[] {
     return this.localStorageService.get(environment.FAVORITES_LOCALSTORAGE_KEY, true);
   }
 

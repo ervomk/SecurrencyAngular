@@ -18,8 +18,8 @@ export class RequestsService {
    * Makes API call to fetch all countries and sets them in the country store.
    * @param callback
    */
-  getAllCountries(callback?: Function): void {
-    if (!this.countryMiniStore.$countries.getValue()) {
+  public getAllCountries(callback?: Function): void {
+    if (!this.countryMiniStore.countries$.getValue()) {
       (this.httpClient.get(environment.API.COUNTRIES_ALL) as Observable<CountryModel[]>).toPromise().then((result: CountryModel[]) => {
         this.countryMiniStore.updateDataCountries(result);
         return callback;
@@ -35,7 +35,7 @@ export class RequestsService {
    * @param query
    * @param callback
    */
-  searchCountries(query: string, callback?: Function): void {
+  public searchCountries(query: string, callback?: Function): void {
     this.countryMiniStore.updateCountriesShowNoResults(false);
 
     if (query) {

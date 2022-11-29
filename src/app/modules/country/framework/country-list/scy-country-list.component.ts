@@ -17,11 +17,11 @@ export class ScyCountryListComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     // This is how we handle edge case where user can write something with no results,
     // in the meantime click on the detailed view, and when
     // go back we won't reload data since the search query is remembered.
-    if (!this.countryMiniStore.$countriesShowNoResults.getValue()) {
+    if (!this.countryMiniStore.countriesShowNoResults$.getValue()) {
       // Makes init call too get all countries.
       this.request.getAllCountries();
     }
@@ -31,7 +31,7 @@ export class ScyCountryListComponent implements OnInit {
    * Handles activate page for pagination.
    * @param pageNumber
    */
-  handleOutputActivatedPage(pageNumber: number): void {
+  public handleOutputActivatedPage(pageNumber: number): void {
     this.countryMiniStore.updateCountriesPaginationCurrentPage(pageNumber);
     this.utilitiesService.scrollBodyToTop();
   }
@@ -40,7 +40,7 @@ export class ScyCountryListComponent implements OnInit {
    * Handles maximum result per page.
    * @param maximumResults
    */
-  handleOutputActiveMaxResults(maximumResults: number): void {
+  public handleOutputActiveMaxResults(maximumResults: number): void {
     this.countryMiniStore.updateCountriesPaginationResultsToShow(maximumResults);
     this.utilitiesService.scrollBodyToTop();
   }

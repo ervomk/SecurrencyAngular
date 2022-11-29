@@ -11,13 +11,13 @@
     </div>
   </div>
 
-  <ng-container *ngIf="countryMiniStore.$countriesShowNoResults.getValue()">
+  <ng-container *ngIf="countryMiniStore.countriesShowNoResults$.getValue()">
     <div class="container">
       <p>No Results. Please try with different query.</p>
     </div>
   </ng-container>
 
-  <ng-container *ngIf="(countryMiniStore.$countries | async) as countries">
+  <ng-container *ngIf="(countryMiniStore.countries$ | async) as countries">
     <div class="container">
       <div class="scy-country-list__results">
         <div class="scy-country-list__results__single"
@@ -25,9 +25,9 @@
              [state]="country"
              *ngFor="let country of countries
        | pagination:
-       countryMiniStore.$countriesPaginationCurrentPage.getValue()
+       countryMiniStore.countriesPaginationCurrentPage$.getValue()
        :
-       countryMiniStore.$countriesResultsToShow.getValue()">
+       countryMiniStore.countriesResultsToShow$.getValue()">
           <scy-single-country [country]="country"></scy-single-country>
         </div>
       </div>
@@ -37,10 +37,10 @@
         (outputMaxResultsToShow)="handleOutputActiveMaxResults($event)"
         (outputActivatedPage)="handleOutputActivatedPage($event)"
         [dataLength]="countries.length"
-        [maximumPerPage]="countryMiniStore.$countriesResultsToShow.getValue()"
-        [activePage]="countryMiniStore.$countriesPaginationCurrentPage.getValue()"
+        [maximumPerPage]="countryMiniStore.countriesResultsToShow$.getValue()"
+        [activePage]="countryMiniStore.countriesPaginationCurrentPage$.getValue()"
       ></scy-pagination>
     </div>
   </ng-container>
 </div>
-<scy-loader *ngIf="countryMiniStore.$dataLoading.getValue()"></scy-loader>
+<scy-loader *ngIf="countryMiniStore.isLoading$.getValue()"></scy-loader>

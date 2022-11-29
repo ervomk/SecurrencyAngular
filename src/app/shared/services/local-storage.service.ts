@@ -13,7 +13,7 @@ export class LocalStorageService {
    * @param key
    * @param returnParsed
    */
-  get(key: string, returnParsed: boolean): any {
+  public get(key: string, returnParsed: boolean): any {
     return returnParsed ? JSON.parse(localStorage.getItem(key) as any) : localStorage.getItem(key);
   }
 
@@ -22,7 +22,7 @@ export class LocalStorageService {
    * @param key
    * @param data
    */
-  set(key: string, data: string) {
+  public set(key: string, data: string) {
     localStorage.setItem(key, data);
   }
 }

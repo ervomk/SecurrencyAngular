@@ -14,7 +14,7 @@ describe('CountryStoreService', () => {
   });
 
   it('should check updateDataCountries', () => {
-    const spy = spyOn(service.$countries, 'next');
+    const spy = spyOn(service.countries$, 'next');
     const spyMethod = spyOn(service, 'updateCountriesPaginationCurrentPage');
     service.updateDataCountries([]);
     expect(spy).toHaveBeenCalled();

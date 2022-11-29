@@ -1,18 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'scy-button',
   templateUrl: './svc-button.component.html',
   styleUrls: ['./svc-button.component.scss']
 })
-export class SvcButtonComponent implements OnInit {
+export class SvcButtonComponent {
 
-  @Input() text!: string;
-  @Input() setFullWidth?: boolean;
-  @Input() isDeleteButton?: boolean;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() public text!: string;
+  @Input() public setFullWidth?: boolean;
+  @Input() public isDeleteButton?: boolean;
 }
